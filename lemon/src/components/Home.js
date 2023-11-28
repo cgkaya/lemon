@@ -2,6 +2,7 @@ import React from "react";
 
 import CallToAction from "./CallToAction";
 import About from "./About";
+import Specials from "./Specials";
 const Home = () => {
   /*const header = [
     {
@@ -18,16 +19,11 @@ const Home = () => {
   ];*/
 
   return (
-    <About />
-    /*
-    <CallToAction
-      heading="Little Lemon"
-      sub="Chicago"
-      text="We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist."
-      buttonText="Reserve a Table"
-      url="/BookingPage"
-      img="../restauranfood.jpg"
-    />*/
+    <div>
+      <CallToAction className="dark" />
+      <Specials />
+      <About className="dark" />
+    </div>
   );
 };
 export default Home;

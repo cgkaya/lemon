@@ -1,9 +1,10 @@
 import Button from "./Button";
 import React from "react";
+import brus from "../images/bruchetta.svg";
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="container" id="about-section">
       <h1>Little Lemon</h1>
       <h2>Chicago</h2>
       <p>
@@ -17,7 +18,7 @@ const About = () => {
         augue id tempus ultricies. Mauris suscipit porta odio, et pretium nibh
         scelerisque ut.
       </p>
-      <Button text="make sth" url="/BookingPage" />
+      <img src={brus} />
     </div>
   );
 };

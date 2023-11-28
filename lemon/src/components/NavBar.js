@@ -1,8 +1,18 @@
 import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import logo from "../Logo.png";
+import logo from "../images/Logo.svg";
 
 const NavBar = () => {
+  const handleClick = (anchor) => () => {
+    const id = `${anchor}-section`;
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
   return (
     /*<Box
       display="flex"
@@ -19,7 +29,9 @@ const NavBar = () => {
       <nav>
         <ul className="navbarItems flex">
           <li>
-            <Link to="/About">About</Link>
+            <a href="/#about" onClick={handleClick("about")}>
+              About
+            </a>
           </li>
           <li>
             <Link to="/">Menu</Link>

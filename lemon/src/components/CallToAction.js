@@ -1,16 +1,22 @@
 import React from "react";
 import Button from "./Button";
+import img from "../images/restauranfood.jpg";
 
-const CallToAction = (heading, subheading, text, buttonText, url, img) => {
+const CallToAction = () => {
   return (
-    <div className="container grid grid-2 dark">
-      <div>
-        <h1>{heading}</h1>
-        <h2>{subheading}</h2>
-        <p>{text}</p>
-        <Button text={buttonText} url={url} />
+    <div className="dark ">
+      <div className="container grid grid-2 cta">
+        <div className="header">
+          <h1>Little Lemon</h1>
+          <h2>Chicago</h2>
+          <p>
+            We are a family owned Mediterranean restaurant, focused on
+            traditional recipes served with a modern twist.
+          </p>
+          <Button text="Reserve a Table" url="/BookingPage" />
+        </div>
+        <img src={img} />
       </div>
-      <img src={img} />
     </div>
   );
 };
