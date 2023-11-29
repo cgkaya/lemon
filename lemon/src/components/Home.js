@@ -3,6 +3,7 @@ import React from "react";
 import CallToAction from "./CallToAction";
 import About from "./About";
 import Specials from "./Specials";
+import Testimonials from "./Testimonials";
 const Home = () => {
   /*const header = [
     {
@@ -22,6 +23,7 @@ const Home = () => {
     <div>
       <CallToAction className="dark" />
       <Specials />
+      <Testimonials />
       <About className="dark" />
     </div>
   );

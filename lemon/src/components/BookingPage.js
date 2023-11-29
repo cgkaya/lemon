@@ -1,5 +1,5 @@
 import React from "react";
-import restaurant from "../restaurant.jpg";
+import restaurant from "../images/restaurant.jpg";
 import { Box, HStack, VStack, Text } from "@chakra-ui/react";
 
 const BookingPage = () => {

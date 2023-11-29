@@ -44,10 +44,15 @@ html {
 }
 .grid-2 {
   grid-template-columns: 1fr 1fr;
+  gap: 5rem;
 }
 .grid-3 {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5rem;
+}
+.grid-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
 }
 .dark {
   background-color: #495e57;
@@ -64,12 +69,14 @@ html {
   border: 1px solid #f4ce14;
   font-size: 1.6rem;
   font-family: "Karla", sans-serif;
-  font-weight: 700;
 }
 .navButton:hover {
   background-color: #edefee;
   color: #495e57;
   border: 1px solid #495e57;
+}
+button {
+  font-weight: 700;
 }
 h1,
 h2,
@@ -86,13 +93,14 @@ h2 {
   font-weight: 700;
 }
 h3 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
+  font-weight: 700;
 }
 p {
   font-size: 1.6rem;
 }
 .header {
-  width: 70%;
+  width: 80%;
   margin: 2.5rem 2rem;
 }
 .header p {
@@ -123,10 +131,7 @@ p {
   padding: 1rem 1.5rem;
   font-size: 1.6rem;
 }
-.card h3 {
-  font-size: 2.4rem;
-  font-weight: 700;
-}
+
 .card span {
   font-size: 1.4rem;
   color: #ee9972;
@@ -149,4 +154,57 @@ p {
 }
 .cta {
   align-items: center;
+}
+.person_img {
+  border-radius: 50%;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  margin: 1em;
+  width: 30%;
+  display: inline-block;
+  justify-self: center;
+}
+.review {
+  background-color: #edefee;
+  padding: 2rem 1.5rem;
+  box-shadow: 5px 10px 20px #3a3737;
+}
+.rating {
+  display: flex;
+  justify-content: center;
+}
+svg {
+  display: inline-block;
+}
+.testimonial {
+  text-align: center;
+  color: #333;
+}
+.b_padding {
+  padding-bottom: 3.6rem;
+}
+.bold {
+  font-weight: 700;
+}
+.about-img {
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  height: 60%;
+  width: 50%;
+  object-fit: cover;
+}
+.owners {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+#adrian {
+  position: relative;
+  top: 150px;
+  right: 0px;
+  z-index: 3;
+}
+#mario {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  z-index: 1;
 }

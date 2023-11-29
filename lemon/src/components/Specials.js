@@ -16,7 +16,7 @@ const dishes = [
     price: "5.99",
     description:
       "Our Bruschetta is made from homemade grilled bread that has been smeared with garlic and seasoned with salt and olive oil. Topped with fresh vegetables.",
-    getImageSrc: () => require("../images/bruchetta.svg"),
+    getImageSrc: () => require("../images/bruchetta.29.svg"),
   },
   {
     title: "Lemon Cake",
@@ -29,7 +29,7 @@ const dishes = [
 const Specials = () => {
   return (
     <div className="container ">
-      <div className="flex specials">
+      <div className="flex specials b_padding">
         <h1>Specials</h1>
         <Button text="Online Menu" url="" />
       </div>
