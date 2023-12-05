@@ -4,6 +4,7 @@ import CallToAction from "./CallToAction";
 import About from "./About";
 import Specials from "./Specials";
 import Testimonials from "./Testimonials";
+
 const Home = () => {
   /*const header = [
     {

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../images/Logo.svg";
 
 const NavBar = () => {
@@ -37,7 +37,7 @@ const NavBar = () => {
             <Link to="/">Menu</Link>
           </li>
           <li>
-            <Link to="/BookingPage">Reservations</Link>
+            <Link to="/booking">Reservations</Link>
           </li>
           <li>
             <Link to="/">Order Online</Link>

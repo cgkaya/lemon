@@ -1,54 +1,30 @@
 import React from "react";
 import restaurant from "../images/restaurant.jpg";
-import { Box, HStack, VStack, Text } from "@chakra-ui/react";
+import BookingForm from "../components/BookingForm";
+import { useReducer } from "react";
+import { fetchAPI } from "../BookingAPI";
 
 const BookingPage = () => {
-  return (
-    <main>
-      <Box backgroundColor={"#495e57"} marginBottom={"96px"}>
-        <Box maxWidth="1280px" alignItems="center" margin="0 auto">
-          <HStack justifyContent="space-between" spacing={28}>
-            <Box>
-              <h2
-                style={{
-                  fontSize: "60px",
-                  paddingTop: "24px",
-                  textAlign: "left",
-                  color: "#f4ce14",
-                }}
-              >
-                Reserve a table!
-              </h2>
-              <Text
-                color={"#edefee"}
-                textAlign="left"
-                padding={"24px 0"}
-                fontSize={"20px"}
-              >
-                <b>Opening times :</b> Monday - Sunday opening. 12pm - 11.30pm.
-              </Text>
-            </Box>
-            <img
-              src={restaurant}
-              style={{
-                objectFit: "cover",
-                height: "30vh",
-                borderRadius: "16px",
+  function updateTimes(selectedDate) {
+    return fetchAPI(selectedDate);
+  }
+  const initializeTimes = fetchAPI(new Date());
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
 
-                position: "relative",
-                top: "48px",
-                boxShadow: "3px 3px 15px rgba(0,0,0,.2)",
-              }}
-            />
-          </HStack>
-        </Box>
-      </Box>
-      <Box
-        maxWidth="1280px"
-        alignItems="center"
-        margin="0 auto"
-        textAlign="center"
-      >
+  return (
+    <div>
+      <div className="dark ">
+        <div className="container grid grid-2 cta">
+          <div>
+            <h1>Reserve a table!</h1>
+            <p>
+              <b>Opening times :</b> Monday - Sunday opening. 12pm - 11.30pm.
+            </p>
+          </div>
+          <img src={restaurant} alt="Little Lemon restaurant outdoor view " />
+        </div>
+      </div>
+      <div className="container r-details">
         <p>
           Food served until 10.00pm Sunday - Thursday, and until 10.30pm on
           Friday & Saturday.
@@ -59,9 +35,10 @@ const BookingPage = () => {
           desired group size or time is unavailable please send us an email at
           hello@littlelemon.com
         </p>
-        <form>Form</form>
-      </Box>
-    </main>
+        <h2>Book a table now!</h2>
+        <BookingForm availableTimes={availableTimes} updateTimes={dispatch} />
+      </div>
+    </div>
   );
 };
 export default BookingPage;
