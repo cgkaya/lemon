@@ -213,20 +213,14 @@ svg {
   line-height: 2;
 }
 .r-form {
-  max-width: 50rem;
+  max-width: 30rem;
   gap: 2rem;
   font-size: 1.6rem;
-  background-color: #495e57;
-  color: #edefee;
+
   justify-self: center;
   text-align: center;
 }
 button:disabled {
   background-color: #ee9972;
   border-color: #ee9972;
-}
-input,
-select {
-  background-color: #495e57;
-  color: #edefee;
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "./Card";
 import Button from "./Button";
-import brus from "../images/bruchetta.svg";
 
 const dishes = [
   {
@@ -16,7 +15,7 @@ const dishes = [
     price: "5.99",
     description:
       "Our Bruschetta is made from homemade grilled bread that has been smeared with garlic and seasoned with salt and olive oil. Topped with fresh vegetables.",
-    getImageSrc: () => require("../images/bruchetta.29.svg"),
+    getImageSrc: () => require("../images/bruchetta.png"),
   },
   {
     title: "Lemon Cake",

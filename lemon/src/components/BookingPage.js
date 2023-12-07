@@ -1,16 +1,8 @@
 import React from "react";
 import restaurant from "../images/restaurant.jpg";
 import BookingForm from "../components/BookingForm";
-import { useReducer } from "react";
-import { fetchAPI } from "../BookingAPI";
 
-const BookingPage = () => {
-  function updateTimes(selectedDate) {
-    return fetchAPI(selectedDate);
-  }
-  const initializeTimes = fetchAPI(new Date());
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
-
+const BookingPage = (props) => {
   return (
     <div>
       <div className="dark ">
@@ -36,7 +28,10 @@ const BookingPage = () => {
           hello@littlelemon.com
         </p>
         <h2>Book a table now!</h2>
-        <BookingForm availableTimes={availableTimes} updateTimes={dispatch} />
+        <BookingForm
+          availableTimes={props.availableTimes}
+          dispatch={props.dispatch}
+        />
       </div>
     </div>
   );

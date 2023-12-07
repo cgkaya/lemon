@@ -9,8 +9,7 @@ const seededRandom = (seed) => {
 
 export function fetchAPI(date) {
   let result = [];
-  let dt = new Date(date);
-  let random = seededRandom(dt.getDate());
+  let random = seededRandom(date.getDate());
 
   for (let i = 17; i <= 21; i++) {
     if (random() < 0.5) {
@@ -24,6 +23,5 @@ export function fetchAPI(date) {
 }
 
 export function submitAPI(formData) {
-  if (!true) console.log(formData);
   return true;
 }

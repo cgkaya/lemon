@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { submitAPI } from "../BookingAPI";
+import { useNavigate } from "react-router-dom";
 
 const BookingForm = (props) => {
   const [r_date, setDate] = useState();
@@ -8,34 +10,30 @@ const BookingForm = (props) => {
   const [occasion, setOccasion] = useState("occasion");
   const [placement, setPlacement] = useState("placement");
 
-  const [timeOptions, setTimeOptions] = useState(
-    props.availableTimes.map((times) => (
-      <option key={times} value={times}>
-        {times}
-      </option>
-    ))
-  );
+  const timeOptions = props.availableTimes.times.map((hour) => (
+    <option key={hour} value={hour}>
+      {hour}
+    </option>
+  ));
+
+  const navigate = useNavigate();
+  function submitForm(formData) {
+    if (submitAPI(formData)) {
+      navigate("/confirmation");
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Reservation is submitted!");
+    submitForm(e);
   };
   const handleDateChange = (e) => {
     const selectedDate = e.target.value;
     setDate(selectedDate);
-    props.updateTimes(selectedDate);
-    setTimeOptions(
-      props.availableTimes.map((times) => (
-        <option key={times} value={times}>
-          {times}
-        </option>
-      ))
-    );
+    props.dispatch(selectedDate);
   };
   const isValid = () => {
-    return (
-      r_date && guest && occasion !== "occasion" && placement !== "placement"
-    );
+    return guest && occasion !== "occasion" && placement !== "placement";
   };
   return (
     <form onSubmit={handleSubmit} className="grid r-form">
@@ -46,10 +44,12 @@ const BookingForm = (props) => {
         value={r_date}
         id="r_date"
         onChange={handleDateChange}
+        data-testid="r_date"
       ></input>
       <label htmlFor={time}>Choose time</label>
       <select
         id="availableTimes"
+        data-testid="availableTimes"
         value={time}
         onChange={(e) => {
           setTime(e.target.value);
@@ -57,7 +57,7 @@ const BookingForm = (props) => {
       >
         {timeOptions}
       </select>
-      <label htmlFor={guest}>Number of guest</label>
+      <label htmlFor={guest}>Number of guests</label>
       <input
         type="number"
         value={guest}
@@ -65,6 +65,7 @@ const BookingForm = (props) => {
         min={1}
         max={10}
         id="guest"
+        data-testid="guest"
         onChange={(e) => {
           setGuest(e.target.value);
         }}
@@ -72,6 +73,7 @@ const BookingForm = (props) => {
       <label htmlFor={occasion}>Occasion</label>
       <select
         id="occasion"
+        data-testid="occasion"
         value={occasion}
         onChange={(e) => {
           setOccasion(e.target.value);
@@ -85,6 +87,7 @@ const BookingForm = (props) => {
       <label htmlFor={placement}>Preferred table placement</label>
       <select
         id="placement"
+        data-testid="placement"
         value={placement}
         onChange={(e) => {
           setPlacement(e.target.value);
