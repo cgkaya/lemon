@@ -38,7 +38,7 @@ const Testimonials = () => {
       <div className="container testimonial">
         <h1 className="b_padding">Testimonials</h1>
 
-        <div className="grid grid-4 ">
+        <div className="grid grid-4 media-2">
           {people.map((person) => (
             <Review
               key={person.person}

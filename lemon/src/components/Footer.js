@@ -1,47 +1,77 @@
 import React from "react";
-import logo from "../Logo.png";
-import { Box, HStack, VStack } from "@chakra-ui/react";
-import { startOptimizedAppearAnimation } from "framer-motion";
+import logo from "../images/small_logo.png";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faSquareInstagram,
+  faLinkedin,
+  faSquarePinterest,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
-  const footerItems = [
+  const socials = [
     {
-      heading: "Navigation",
-      listItems: [
-        "Home",
-        "About",
-        "Menu",
-        "Reservation",
-        "Order Online",
-        "Login",
-      ],
+      icon: faSquareInstagram,
+      url: "https://www.instagram.com",
+      id: "1",
     },
     {
-      heading: "Contact Us",
-      listItems: ["Phone", "E-mail", "Adress"],
+      icon: faLinkedin,
+      url: "https://www.linkedin.com",
+      id: "3",
     },
     {
-      heading: "Social Media",
-      listItems: ["Instagram", "Linkedin", "Pinterest"],
+      icon: faSquarePinterest,
+      url: "https://www.pinterest.com",
+      id: "3",
     },
   ];
-  /*const openListItems = footerItems.listItems.map((openListItem) => (
-    <p>{openListItem}</p>
-  ));*/
-  const footerNavItems = footerItems.map((footerItem) => (
-    <h3>{footerItem.heading}</h3>
-  ));
+  const navSocials = socials.map((social) => {
+    return (
+      <a href={social.url} key={social.id}>
+        <FontAwesomeIcon icon={social.icon} size="2x"></FontAwesomeIcon>
+      </a>
+    );
+  });
+
   return (
-    <footer>
-      <Box color="#495e57" fontFamily="Karla" margin="0 auto" maxWidth="1280px">
-        <HStack justifyContent="space-between" alignItems="center" spacing={28}>
-          <VStack>
-            <img src={logo} alt="Little Lemon Logo" width={"350px"} />
-            <span>Copyright 2023</span>
-          </VStack>
-          <p>{footerNavItems}</p>
-        </HStack>
-      </Box>
+    <footer className="footer-section">
+      <div className="container grid grid-3 footer">
+        <div>
+          <img src={logo} alt="Little Lemon Logo" className="footer-logo" />
+          <span>Copyright 2023</span>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <ul className="footer-list">
+            <li>
+              <a href="/#about">About</a>
+            </li>
+            <li>
+              <Link to="/">Menu</Link>
+            </li>
+            <li>
+              <Link to="/booking">Reservations</Link>
+            </li>
+            <li>
+              <Link to="/">Order Online</Link>
+            </li>
+            <li>
+              <Link to="/">Login</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact Us</h3>
+          <ul className="footer-list">
+            <li>Phone</li>
+            <li>E-mail</li>
+            <li>Address</li>
+          </ul>
+          <div className="flex socials">{navSocials}</div>
+        </div>
+      </div>
     </footer>
   );
 };

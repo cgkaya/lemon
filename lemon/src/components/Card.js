@@ -10,9 +10,14 @@ const Card = ({ title, price, description, imageSrc }) => {
         <span>${price}</span>
       </div>
       <p>{description}</p>
-      <div className="flex bold">
+      <div className="flex bold order">
         <p>Order a delivery</p>
-        <img src={icon} className="icon" />
+        <img
+          src={icon}
+          className="icon"
+          aria-label="basket icon"
+          alt="backet icon"
+        />
       </div>
     </div>
   );

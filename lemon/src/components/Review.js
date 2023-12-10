@@ -10,7 +10,7 @@ const Review = ({ rating, imageSrc, person, review }) => {
         fillColor="#f4ce14"
         readonly
       />
-      <img src={imageSrc} className="person_img" />
+      <img src={imageSrc} className="person_img" alt={person} />
       <h3>{person}</h3>
       <p>{review}</p>
     </div>

@@ -32,7 +32,7 @@ const Specials = () => {
         <h1>Specials</h1>
         <Button text="Online Menu" url="" />
       </div>
-      <div className="grid grid-3 ">
+      <div className="grid grid-3 media-1">
         {dishes.map((dish) => (
           <Card
             key={dish.title}

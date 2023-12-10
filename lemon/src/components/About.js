@@ -1,4 +1,3 @@
-import Button from "./Button";
 import React from "react";
 import mario from "../images/Mario and Adrian A.jpg";
 import adrian from "../images/restaurant chef B.jpg";

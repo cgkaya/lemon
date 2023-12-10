@@ -5,7 +5,7 @@ const Confirmation = () => {
     <header>
       <section className="dark">
         <div className="container">
-          <h1>Your Reservation is Confirmed!</h1>
+          <h1>Your reservation is confirmed!</h1>
           <h2>A confirmation message has been sent to your email.</h2>
           <p>Thanks for dining with us!</p>
         </div>

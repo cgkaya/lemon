@@ -10,10 +10,14 @@ const BookingPage = (props) => {
           <div>
             <h1>Reserve a table!</h1>
             <p>
-              <b>Opening times :</b> Monday - Sunday opening. 12pm - 11.30pm.
+              <b>Opening times :</b> Monday - Sunday opening. 5pm - 11.30pm.
             </p>
           </div>
-          <img src={restaurant} alt="Little Lemon restaurant outdoor view " />
+          <img
+            src={restaurant}
+            alt="Little Lemon restaurant outdoor view "
+            className="visible"
+          />
         </div>
       </div>
       <div className="container r-details">
